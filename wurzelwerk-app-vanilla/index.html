@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WurzelWerk – Deine Pflanzen-App</title>
+</head>
+
+<body>
+  <!-- Login/Registrierung ("eigene Seite") ... bleibt wie gehabt ... -->
+  <div id="auth-overlay" class="auth-fullpage" style="display:flex;">
+    ... <!-- wie vorher, kein Unterschied -->
+  </div>
+
+  <!-- Haupt-App-Bereich -->
+  <div id="app-content" style="display:none;">
+    <header>
+      <h1>🌱 WurzelWerk</h1>
+      <button id="logout-btn" style="float:right; display:none;">Logout</button>
+      <p class="subtitle">Die Community-App für Pflanzenfreunde</p>
+    </header>
+
+    <main>
+      <!-- STARTSEITE -->
+      <section id="startseite-section" style="display:block;">
+        <div class="start-home">
+          <h2>Willkommen bei WurzelWerk 🌱</h2>
+          <p>Hier kannst du mit der Community Pflanzen entdecken, Tipps teilen und Wissen sammeln.</p>
+          <ul>
+            <li>👉 Durchstöbere die Pflanzenliste</li>
+            <li>👉 Teile deine Erfahrungen</li>
+            <li>👉 Erfahre Neues rund um Pflanzen, Krankheiten & Pflege</li>
+          </ul>
+          <!-- Optional: Highlight, Zufallsspruch, Community-News etc. -->
+        </div>
+      </section>
+
+      <!-- PFLANZENLISTE -->
+      <section id="pflanzen-liste-section" style="display:none;">
+        <button class="back-home-btn">⬅️ Zurück zur Startseite</button>
+        <div id="pflanzen-liste"></div>
+        <button id="pflanze-hinzufuegen-btn" class="primary-btn">🌱 Neue Pflanze anlegen</button>
+      </section>
+
+      <!-- Weitere Bereiche -->
+      <section id="krankheiten-section" style="display:none;">
+        <button class="back-home-btn">⬅️ Zurück zur Startseite</button>
+        <div id="krankheiten-liste"></div>
+        <button id="krankheit-hinzufuegen-btn" class="primary-btn">➕ Neue Krankheit melden</button>
+      </section>
+      
+
+      <section id="tipps-section" style="display:none;">
+        <button class="back-home-btn">⬅️ Zurück zur Startseite</button>
+        <!-- Hier kommt später deine Tipps-Liste -->
+        <div class="bereich-hinweis">Hier kannst du Tipps und Erfahrungen teilen...</div>
+      </section>
+
+      <section id="community-section" style="display:none;">
+        <button class="back-home-btn">⬅️ Zurück zur Startseite</button>
+        <!-- Hier kommt später dein Community-Bereich -->
+        <div class="bereich-hinweis">Hier findest du Community-News, Feedback usw...</div>
+      </section>
+
+      <!-- Overlay/Popup für das Formular (wie gehabt) -->
+      <div id="pflanze-form-overlay" class="modal-overlay" style="display:none;">
+        ... <!-- wie gehabt -->
+      </div>
+      <!-- Universelles Popup-Fenster für Bearbeiten/Anlegen -->
+      <div id="universal-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content" id="universal-modal-content">
+          <!-- Inhalt wird per JS dynamisch befüllt -->
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+      <button id="menu-pflanzen">Pflanzen</button>
+      <button id="menu-krankheiten">Krankheiten</button>
+      <button id="menu-tipps">Tipps</button>
+      <button id="menu-community">Community</button>
+    </nav>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+
+</html>

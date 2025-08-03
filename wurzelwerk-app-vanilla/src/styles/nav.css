@@ -1,0 +1,40 @@
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--light-green);
+  border-top: 2px solid var(--green);
+  z-index: 100;
+  box-shadow: 0 -2px 12px rgba(62,97,59,0.08);
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  outline: none;
+  flex: 1;
+  color: var(--green);
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.bottom-nav button:active,
+.bottom-nav button:hover {
+  color: #267625;
+  background: rgba(255,255,255,0.18);
+}
+
+.bottom-nav button span {
+  font-size: 0.8rem;
+}

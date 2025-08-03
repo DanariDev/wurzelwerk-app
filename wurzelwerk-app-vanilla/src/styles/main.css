@@ -1,0 +1,515 @@
+/* === Grundfarben/Fonts === */
+body {
+  font-family: "Nunito", Arial, sans-serif;
+  background: linear-gradient(135deg, #c1dcb1 0%, #e9fbe4 100%);
+  margin: 0;
+  padding: 0;
+  color: #263618;
+}
+
+/* === App Header === */
+header {
+  padding: 1.4rem 0 1rem 0;
+  text-align: center;
+  position: relative;
+}
+header h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #406c38;
+  margin-bottom: 0.09rem;
+  letter-spacing: 0.01em;
+}
+header .subtitle {
+  color: #648259;
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+#logout-btn {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: #e9fbe4;
+  color: #263618;
+  border: none;
+  border-radius: 7px;
+  padding: 0.28rem 0.83rem;
+  font-size: 1.03rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 7px #b3e6b455;
+  transition: background 0.13s;
+  z-index: 40;
+}
+#logout-btn:hover {
+  background: #73c26e;
+  color: #fff;
+}
+
+main {
+  min-height: 66vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ALLES horizontal zentriert */
+  justify-content: flex-start; /* Du kannst später auch 'center' testen */
+}
+
+/* === Sections (Mobile Only) === */
+section {
+  margin: 2.1rem auto 2.1rem auto; /* auto macht horizontal Mitte */
+  padding: 0;
+  width: 96vw;
+  max-width: 480px;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pflanzen-liste-section,
+#krankheiten-section,
+#tipps-section,
+#community-section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 23px #b3e6b4a0;
+  margin-top: 1.3rem;
+  margin-bottom: 1.7rem;
+  padding: 1.05rem 0.6rem 0.9rem 0.6rem;
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#startseite-section {
+  margin-top: 1.5rem;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  width: 96vw;
+  max-width: 480px;
+  min-width: 0;
+}
+
+/* === Primary Button === */
+.primary-btn {
+  background: linear-gradient(90deg, #b3e6b4 70%, #73c26e 100%);
+  color: #263618;
+  font-size: 1.08rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 11px;
+  box-shadow: 0 2px 7px #b3e6b440;
+  padding: 0.7rem 0;
+  margin-top: 1.07rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.17s, color 0.12s;
+  letter-spacing: 0.01em;
+}
+.primary-btn:hover {
+  background: linear-gradient(90deg, #73c26e 70%, #b3e6b4 100%);
+  color: #fff;
+}
+
+/* === Zurück-Button === */
+.back-home-btn {
+  margin-bottom: 1.05rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #b3e6b4 85%, #73c26e 100%);
+  color: #263618;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 7px #b3e6b440;
+  transition: background 0.13s, color 0.09s;
+  width: 100%;
+  max-width: 310px;
+}
+.back-home-btn:hover {
+  background: linear-gradient(135deg, #73c26e 80%, #b3e6b4 100%);
+  color: #fff;
+}
+
+/* === Universal Modal (Mobile) === */
+#universal-modal.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(80, 130, 80, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1111;
+  margin-left: auto;
+  margin-right: auto;
+}
+#universal-modal .modal-content {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px #b3e6b4a0;
+  padding: 1.05rem 0.6rem 0.9rem 0.6rem;
+  min-width: 0;
+  width: 97vw;
+  max-width: 410px;
+  box-sizing: border-box;
+  position: relative;
+}
+#universal-modal .close-btn {
+  position: absolute;
+  top: 0.83rem;
+  right: 0.75rem;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  z-index: 3;
+}
+
+#universal-modal h2 {
+  font-size: 1.25rem;
+  color: #263618;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+#universal-modal label {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #295422;
+  margin-bottom: 0.12rem;
+  margin-top: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* Namensfeld schmaler (Mobile) */
+#universal-modal .modal-content > label + input[type="text"]:first-of-type {
+  max-width: 220px;
+  display: block;
+}
+
+/* Modal Inputs (Mobile) */
+#universal-modal input[type="text"],
+#universal-modal input[type="password"],
+#universal-modal input[type="email"] {
+  padding: 0.46rem 0.8rem;
+  margin-bottom: 0.28rem;
+  border: 1.5px solid #b3e6b4;
+  border-radius: 10px;
+  background: #f8fbf7;
+  font-size: 1.04rem;
+  transition: border 0.14s, background 0.14s;
+  width: 100%;
+  max-width: 99%;
+  box-sizing: border-box;
+}
+#universal-modal input[type="text"]:focus,
+#universal-modal input[type="password"]:focus,
+#universal-modal input[type="email"]:focus {
+  border: 1.7px solid #73c26e;
+  background: #f3fff1;
+  outline: none;
+}
+
+/* Modal Speichern-Button (Mobile) */
+#universal-modal button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 1.1rem;
+  padding: 0.64rem 0;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #b3e6b4 70%, #73c26e 100%);
+  color: #263618;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 7px #b3e6b440;
+  transition: background 0.15s, color 0.11s;
+  letter-spacing: 0.01em;
+}
+#universal-modal button[type="submit"]:hover {
+  background: linear-gradient(90deg, #73c26e 70%, #b3e6b4 100%);
+  color: #fff;
+}
+
+/* === Listenfelder im Modal (Mobile) === */
+.list-input-group {
+  margin-bottom: 1.1rem;
+}
+.list-input-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.33rem;
+}
+.list-input {
+  flex: 1;
+  padding: 0.39rem 0.85rem;
+  margin-right: 0.44rem;
+  border: 1.5px solid #b3e6b4;
+  border-radius: 9px;
+  background: #f8fbf7;
+  font-size: 1.01rem;
+  transition: border 0.13s;
+}
+.list-input:focus {
+  border: 1.5px solid #73c26e;
+  background: #f3fff1;
+  outline: none;
+}
+.list-remove-btn {
+  background: #ffeded;
+  border: none;
+  color: #b23333;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.07rem;
+  padding: 0.22rem 0.85rem;
+  margin-left: 0.17rem;
+  box-shadow: 0 1.5px 6px #e3565620;
+  transition: background 0.12s, color 0.12s;
+}
+.list-remove-btn:hover {
+  background: #e35656;
+  color: #fff;
+}
+.list-add-btn {
+  background: #eaf4e6;
+  border: none;
+  color: #406c38;
+  border-radius: 8px;
+  font-size: 0.97rem;
+  cursor: pointer;
+  padding: 0.33rem 1.1rem;
+  margin-top: 0.08rem;
+  margin-bottom: 0.44rem;
+  font-weight: 500;
+  box-shadow: 0 1.5px 6px #73c26e22;
+  transition: background 0.13s, color 0.12s;
+}
+.list-add-btn:hover {
+  background: #73c26e;
+  color: #fff;
+}
+
+/* === Listen und Cards mobil === */
+.pflanze-eintrag-card,
+.krankheit-eintrag-card,
+.tipp-eintrag-card {
+  background: #f8fbf7;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px #b3e6b440;
+  margin-bottom: 0.77rem;
+  padding: 0.78rem 0.7rem 0.64rem 0.7rem;
+  font-size: 1.01rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pflanze-eintrag-name,
+.krankheit-eintrag-name,
+.tipp-eintrag-title {
+  font-weight: 700;
+  color: #263618;
+  font-size: 1.06rem;
+  margin-right: 0.55rem;
+}
+
+.pflanze-eintrag-card button,
+.krankheit-eintrag-card button,
+.tipp-eintrag-card button {
+  background: none;
+  border: none;
+  font-size: 1.13rem;
+  cursor: pointer;
+  margin-left: 0.22rem;
+}
+
+.pflanze-eintrag-card .delete-btn,
+.krankheit-eintrag-card .delete-btn,
+.tipp-eintrag-card .delete-btn {
+  color: #b23333;
+  background: #ffeded;
+  border-radius: 6px;
+  padding: 0.18rem 0.55rem;
+  transition: background 0.11s, color 0.1s;
+}
+.pflanze-eintrag-card .delete-btn:hover,
+.krankheit-eintrag-card .delete-btn:hover,
+.tipp-eintrag-card .delete-btn:hover {
+  background: #e35656;
+  color: #fff;
+}
+
+/* === Bottom Navigation mobil === */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background: linear-gradient(90deg, #e9fbe4 50%, #c1dcb1 100%);
+  border-top: 1.7px solid #c7ebba;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 120;
+  min-height: 52px;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 1.03rem;
+  color: #263618;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.68rem 0.05rem 0.45rem 0.05rem;
+  border-radius: 6px;
+  transition: background 0.12s, color 0.09s;
+}
+.bottom-nav button:hover,
+.bottom-nav button.active {
+  background: #b3e6b4;
+  color: #406c38;
+}
+
+/* === Auth-Card (Login/Registrierung, Mobile) === */
+.auth-fullpage {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #f7fbf6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px #b3e6b4a0;
+  padding: 1.4rem 1.2rem 1.1rem 1.2rem;
+  min-width: 0;
+  max-width: 94vw;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.auth-card h1 {
+  font-size: 1.68rem;
+  color: #406c38;
+  margin-bottom: 1.1rem;
+  margin-top: 0.12rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.auth-card h2 {
+  font-size: 1.17rem;
+  margin-bottom: 0.43rem;
+  font-weight: 700;
+}
+.auth-card label {
+  display: block;
+  text-align: left;
+  color: #2c4b26;
+  margin: 0.48rem 0 0.13rem 0;
+  font-weight: 500;
+  font-size: 0.97rem;
+}
+.auth-card input[type="text"],
+.auth-card input[type="password"],
+.auth-card input[type="email"] {
+  width: 100%;
+  padding: 0.43rem 0.84rem;
+  margin-bottom: 0.27rem;
+  border: 1.2px solid #b3e6b4;
+  border-radius: 7px;
+  background: #f8fbf7;
+  font-size: 0.98rem;
+  transition: border 0.13s, background 0.13s;
+}
+.auth-card input[type="text"]:focus,
+.auth-card input[type="password"]:focus,
+.auth-card input[type="email"]:focus {
+  border: 1.3px solid #73c26e;
+  background: #f3fff1;
+  outline: none;
+}
+.auth-card button[type="submit"],
+.auth-card .primary-btn {
+  width: 100%;
+  margin-top: 0.87rem;
+  padding: 0.47rem 0;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #b3e6b4 70%, #73c26e 100%);
+  color: #263618;
+  font-size: 1.01rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 7px #b3e6b440;
+  transition: background 0.13s, color 0.11s;
+}
+.auth-card button[type="submit"]:hover,
+.auth-card .primary-btn:hover {
+  background: linear-gradient(90deg, #73c26e 70%, #b3e6b4 100%);
+  color: #fff;
+}
+.auth-card p {
+  color: #789171;
+  font-size: 0.95rem;
+  margin: 0.49rem 0 0.2rem 0;
+}
+.auth-card .error {
+  color: #b23333;
+  font-weight: 600;
+  font-size: 0.99rem;
+  margin-top: 0.3rem;
+}
+main {
+  min-height: 66vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section {
+  margin: 2.1rem auto 2.1rem auto;
+  padding: 0;
+  width: 96vw;
+  max-width: 480px;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pflanze-eintrag-card,
+.krankheit-eintrag-card,
+.tipp-eintrag-card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.primary-btn,
+.back-home-btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

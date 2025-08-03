@@ -1,0 +1,19 @@
+/* Pflanzenkarte/Card Design */
+.plant-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(62,97,59,0.08);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1.5px solid var(--light-green);
+}
+.plant-card h2 {
+  font-size: 1.2rem;
+  color: var(--green);
+}
+.plant-card .plant-meta {
+  font-size: 0.9rem;
+  color: #4f594f;
+}

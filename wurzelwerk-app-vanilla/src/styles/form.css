@@ -1,0 +1,46 @@
+.primary-btn {
+  margin: 1.4rem auto 0.7rem auto;
+  display: block;
+  background: linear-gradient(90deg, #4a7c59 60%, #b3e6b4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  box-shadow: 0 2px 10px #b3e6b4bb;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.primary-btn:hover {
+  background: linear-gradient(90deg, #386142 80%, #b3e6b4 100%);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(70,110,67,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px #b3e6b499;
+  padding: 2.1rem 1.4rem 1.3rem 1.4rem;
+  min-width: 330px;
+  max-width: 96vw;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem; right: 1.1rem;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #333;
+  cursor: pointer;
+}
